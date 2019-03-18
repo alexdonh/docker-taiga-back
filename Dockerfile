@@ -36,6 +36,8 @@ COPY config.py /tmp/taiga-conf/
 COPY nginx.conf /etc/nginx/conf.d/
 COPY start.sh /
 
+RUN chmod +x /start.sh || true
+
 VOLUME ["/taiga-conf", "/taiga-media"]
 
 CMD ["/start.sh"]
